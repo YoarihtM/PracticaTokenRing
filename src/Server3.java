@@ -2,12 +2,13 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.text.SimpleDateFormat;
+import java.time.LocalTime;
 import java.util.Calendar;
 import java.util.Random;
 
 public class Server3 {
     public static void main(String[] args) {
-        String tiempoInicio = new SimpleDateFormat("HH:mm:ss").format(Calendar.getInstance().getTime());
+        String tiempoInicio = LocalTime.now().toString();
         System.out.println("Despliegue del servicio: " + tiempoInicio + "\n");
 
         Random num = new Random();
@@ -51,7 +52,7 @@ public class Server3 {
 
                 Thread.sleep(3000);
 
-                String tiempoFin = new SimpleDateFormat("HH:mm:ss").format(Calendar.getInstance().getTime());
+                String tiempoFin = LocalTime.now().toString();
                 System.out.println("Fin del servicio: " + tiempoFin + "\n");
 
                 String nuevo_msj = recibido_sep[0] + " , " + port_lis_str +
